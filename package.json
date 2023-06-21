@@ -1,0 +1,22 @@
+{
+  "name": "demand_baseline",
+  "version": "1.0.0",
+  "description": "Dashboard Demand Baseline",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Riki",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.1",
+    "mssql": "^8.1.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.19",
+    "read-excel-file": "^5.4.4"
+  }
+}

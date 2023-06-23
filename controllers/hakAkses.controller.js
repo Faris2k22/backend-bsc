@@ -1,158 +1,151 @@
-const { dirname } = require('path');
+const { dirname } = require("path");
 const model = require("../models/hakAkses.model.js");
 
 exports.auth = (req, res) => {
-    var params = req.body;
-    model.auth(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving data."
-            });
-        else {
-          if(Array.isArray(data)){
-            res.json({ count: data[0].length, data: data[0] });
-          }else{
-            res.json({ count: 0, data: [] });
-          }
-        }
-    });
+  var params = req.body;
+  model.auth(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else {
+      if (Array.isArray(data)) {
+        res.json({ count: data[0].length, data: data[0] });
+      } else {
+        res.json({ count: 0, data: [] });
+      }
+    }
+  });
 };
 
 exports.listBu = (req, res) => {
-    var params = req.body;
-    model.listBu(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving data."
-            });
-        else {
-          res.json({ count: data[0].length, data: data[0] });
-        }
-    });
+  var params = req.body;
+  model.listBu(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else {
+      res.json({ count: data[0].length, data: data[0] });
+    }
+  });
 };
 
-
 exports.listHris = (req, res) => {
-    var params = req.body;
+  var params = req.body;
 
-    model.listHris(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving data."
-            });
-        else {
-          res.json({ count: data[0].length, data: data[0] });
-        }
-    });
+  model.listHris(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else {
+      res.json({ count: data[0].length, data: data[0] });
+    }
+  });
 };
 
 exports.listfilterHris = (req, res) => {
-    var params = req.body;
+  var params = req.body;
 
-    model.listfilterHris(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving data."
-            });
-        else {
-          res.json({ count: data[0].length, data: data[0] });
-        }
-    });
+  model.listfilterHris(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else {
+      res.json({ count: data[0].length, data: data[0] });
+    }
+  });
 };
 
-
 exports.list = (req, res) => {
-    var params = req.body;
+  var params = req.body;
 
-    model.list(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving data."
-            });
-        else {
-          res.json({ count: data[0].length, data: data[0] });
-        }
-    });
+  model.list(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else {
+      res.json({ count: data[0].length, data: data[0] });
+    }
+  });
 };
 
 exports.view = (req, res) => {
-    var params = {}; params = req.query;
+  var params = {};
+  params = req.query;
 
-    model.view(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving data."
-            });
-        else {
-          res.send(data);
-        }
-    });
+  model.view(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else {
+      res.send(data);
+    }
+  });
 };
 
 exports.add = async (req, res) => {
-    var params = req.body;
+  var params = req.body;
 
-    model.add(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message:
-                err.message || "Some error occurred while retrieving data."
-            });
-        else res.send(data);
-    });
+  model.add(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else res.send(data);
+  });
 };
 
 exports.edit = async (req, res) => {
-    var params = req.body;
+  var params = req.body;
 
-    model.edit(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message:
-                err.message || "Some error occurred while retrieving data."
-            });
-        else res.send(data);
-    });
+  model.edit(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else res.send(data);
+  });
 };
 
 exports.edit_map_bu = async (req, res) => {
-    var params = req.body;
+  var params = req.body;
 
-    model.edit_map_bu(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message:
-                err.message || "Some error occurred while retrieving data."
-            });
-        else res.send(data);
-    });
+  model.edit_map_bu(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else res.send(data);
+  });
 };
 
-
 exports.update = async (req, res) => {
-    var params = req.body;
+  var params = req.body;
 
-    model.update(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message:
-                err.message || "Some error occurred while retrieving data."
-            });
-        else res.send(data);
-    });
+  model.update(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else res.send(data);
+  });
 };
 
 exports.delete = async (req, res) => {
-    var params = req.body;
+  var params = req.body;
 
-    model.delete(params, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message:
-                err.message || "Some error occurred while retrieving data."
-            });
-        else res.send(data);
-    });
+  model.delete(params, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving data.",
+      });
+    else res.send(data);
+  });
 };
 
 //

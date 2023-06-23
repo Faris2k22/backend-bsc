@@ -2,6 +2,7 @@ const express = require("express");
 var bodyParser = require("body-parser");
 const app = express();
 const initRoutes = require("./routes");
+require("dotenv").config();
 global.__basedir = __dirname + "/..";
 
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +16,7 @@ app.use(function (req, res, next) {
 });
 
 initRoutes(app);
-let port = 9183;
+let port = process.env.PORT;
 app.listen(port, () => {
   console.log(`Running at localhost:${port}`);
 });
